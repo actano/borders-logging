@@ -12,7 +12,8 @@
   },
   "files": [
     "src",
-    "lib"
+    "lib",
+    "spec.js"
   ],
   "scripts": {
     "prepublish": "rm -rf lib && babel src --out-dir lib",
