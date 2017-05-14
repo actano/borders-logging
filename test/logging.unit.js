@@ -1,4 +1,4 @@
-import testLogging from './spec/logging-backend'
+import testLogging from '../spec/logging-backend'
 import loggingBackend from '../src/backends/console'
 
 describe('borders-logging', () => {
