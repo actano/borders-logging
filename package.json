@@ -12,11 +12,10 @@
   },
   "files": [
     "src",
-    "lib",
-    "spec"
+    "lib"
   ],
   "scripts": {
-    "prepublish": "babel src --out-dir lib && babel spec/logging-backend.es6.js --out-file spec/logging-backend.js",
+    "prepublish": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha"
   },
   "devDependencies": {

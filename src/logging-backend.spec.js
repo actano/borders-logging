@@ -1,8 +1,9 @@
+/* eslint-env mocha */
 import chai from 'chai'
 import sinonChai from 'sinon-chai'
 import sinon from 'sinon'
 import Context from 'borders'
-import * as Commands from '../src/commands'
+import * as Commands from './commands'
 
 chai.use(sinonChai)
 const { expect } = chai
