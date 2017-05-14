@@ -12,4 +12,4 @@ const log = ({ namespace, msg, level, args }) => {
   console[logLevelToMethod[level]](`${namespace}: ${msg}`, ...args)
 }
 
-export default backend => Object.assign({}, backend, { [TYPE]: log })
+export default () => ({ [TYPE]: log })
