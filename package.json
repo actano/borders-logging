@@ -16,7 +16,7 @@
     "spec"
   ],
   "scripts": {
-    "prepublish": "babel src --out-dir lib",
+    "prepublish": "babel src --out-dir lib && babel spec/logging-backend.es6.js --out-file spec/logging-backend.js",
     "test": "mocha"
   },
   "devDependencies": {
