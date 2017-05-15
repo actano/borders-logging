@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 /* eslint-env mocha */
 import chai from 'chai'
 import sinonChai from 'sinon-chai'
@@ -8,13 +9,16 @@ import * as Commands from './commands'
 chai.use(sinonChai)
 const { expect } = chai
 
-export default (loggingBackend) => {
+export default (createBackend) => {
+  let loggingBackend
+
   const execute = generatorFunction => () => {
     const context = new Context().use(loggingBackend)
     return context.execute(generatorFunction())
   }
 
   beforeEach(() => {
+    loggingBackend = createBackend()
     sinon.spy(loggingBackend, Commands.TYPE)
   })
 
