@@ -1,3 +1,3 @@
-# borders
+# borders-logging
 
-Simple framework for abstraction of system borders
+Specification for system border logging
