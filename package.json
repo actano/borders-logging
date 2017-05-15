@@ -16,8 +16,9 @@
     "spec.js"
   ],
   "scripts": {
-    "prepublish": "rm -rf lib && babel src --out-dir lib",
-    "test": "mocha"
+    "prepublish": "npm run lint && rm -rf lib && babel src --out-dir lib",
+    "test": "mocha",
+    "lint": "eslint src test"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
