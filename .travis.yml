@@ -1,17 +1,21 @@
 language: node_js
 node_js:
-  - "8"
-  - "6"
-cache:
-  directories:
-    - "node_modules"
+- '8'
+- '6'
+cache: yarn
+env:
+  global:
+    secure: ZoPSwd7azOzLRhBPV6nt5qwOlEReVuYwERBHPv48iaXzQPxjx4sz53YP/TuLZ/3dnRlcBCujL6JJvDYZ+0VQ2LbOcwyvCJia6kc52p8loYMTVl9grp47nHfOBE2qVFxHU9J61kWvq3AQ4qjHaQNU/XYc8I2NPWI8c5DGrY5j3iOrXOr12/bKERYzWNY4D/2FlDvfQ8Bzcdav2jH+THgxeuorIVgq2/6jUVyHvcQ7BYiYN5rSzZBMsZJNcZWPiFLi6qKLJwsCRQ8dLHpx5lOzGOl1nqp+MRDJV9893QiwUy1ku9xQcbCsDY6H0HuLnoWIL6Y37i3FGCRwWKP+xuWuv7Xeeo0jt6gMfZzZsngsIPVwuCN/6GYpnBPcdDqp4Ws32BXy19byeWjzidmYt4tA94JR/IGYIb4hfnjJe0Z3dkZzj0xfys6pkHzTeuOBIg/prwO2AT+49R34X5LzVVsTcjCRWqj7mfJDel79WFjRHO2SKIHWxyrMz1Z7jFUBFy02nZIO4ZBQFqB9ioDQi2VnTpZXnfJ7xXOl9SoL4TShqelnQ7kssfmqerepuu72azCXli8mSB5rHeLY+LA4p2jYV2eVdJfMJgORkB+RliyxiUzsacL0ZcmycUC7hIPR/50m9OBr/1qmkK93P4X7tYn1H85us9u5SjEVG2L6gMwY05Y=
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
 script:
-  - npm run ci
+- npm run ci
+after_script: greenkeeper-lockfile-upload
 deploy:
   provider: npm
   email: marcus.mennemeier@actano.de
   api_key:
-    secure: "PTNbhnhhzovrPl/i3Qc3jBKM/y4dkypbpJ8/sUuYbw8EM4gAlbGVA+JgVN3Syf+fy7jtYaudbu3mjNxqvBEnuC9gRxEPKplu1oMMnnxZe1q5vcPR50buwjG/bj63U+5dFYZajdxvWCkyH+FhMvuPMELbIEvhODzXSzGKFdwjmkssJKY+0YkwrzrPxMCqYOnggEqEYHl8j6G6nAKwmnIbZCQ+9zRvt3wtghvvkuOIp+zpLwXzxO0+rqD0UN0Zf+aH7jp3f87dWFaxtXkFd3vJK00rg9fWAmuib6vVSUOHKREWxCutl/6gmJhGXLR7iatocT3TiKnbffmap3xffGi6ERyCNYa0Vcr3Ma/snG7so/7xTl+KVpe00zaiyaJG8PRwRSmW3UPKDmVeUlgU6/jpKXFAyq+HKi6MJ7BM/2MqQAwNN+x3bqZtNa4idzwRMu5Egxl2qCuxSjY6dQ3cBAk3MVZeo+qf5O3YUraVw4B/5D1f5LKUt0LPPyUo9ZF2wxY3nTvARETti0zcj/AdI0N1Uh5cl+oc3GwRtZ4iJVMyfSVR4oL4/2OKrlFBh0Tfuzqoyt5KzNP1crWz58OeoFzlFbux60WjR8usvmyDDYryi3I/1Zw1rq4O/aHa36pble8g+tCxagiVLqBz0Sn5b7vrr9l22E8iiBMEtqzRqf8CiCc="
+    secure: PTNbhnhhzovrPl/i3Qc3jBKM/y4dkypbpJ8/sUuYbw8EM4gAlbGVA+JgVN3Syf+fy7jtYaudbu3mjNxqvBEnuC9gRxEPKplu1oMMnnxZe1q5vcPR50buwjG/bj63U+5dFYZajdxvWCkyH+FhMvuPMELbIEvhODzXSzGKFdwjmkssJKY+0YkwrzrPxMCqYOnggEqEYHl8j6G6nAKwmnIbZCQ+9zRvt3wtghvvkuOIp+zpLwXzxO0+rqD0UN0Zf+aH7jp3f87dWFaxtXkFd3vJK00rg9fWAmuib6vVSUOHKREWxCutl/6gmJhGXLR7iatocT3TiKnbffmap3xffGi6ERyCNYa0Vcr3Ma/snG7so/7xTl+KVpe00zaiyaJG8PRwRSmW3UPKDmVeUlgU6/jpKXFAyq+HKi6MJ7BM/2MqQAwNN+x3bqZtNa4idzwRMu5Egxl2qCuxSjY6dQ3cBAk3MVZeo+qf5O3YUraVw4B/5D1f5LKUt0LPPyUo9ZF2wxY3nTvARETti0zcj/AdI0N1Uh5cl+oc3GwRtZ4iJVMyfSVR4oL4/2OKrlFBh0Tfuzqoyt5KzNP1crWz58OeoFzlFbux60WjR8usvmyDDYryi3I/1Zw1rq4O/aHa36pble8g+tCxagiVLqBz0Sn5b7vrr9l22E8iiBMEtqzRqf8CiCc=
   on:
     tags: true
     repo: actano/borders-logging
