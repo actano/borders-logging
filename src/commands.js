@@ -1,3 +1,5 @@
+import commandWithStackFrame from 'borders/command-with-stackframe'
+
 export const TYPE = 'LOG'
 
 export const LogLevel = {
@@ -7,9 +9,9 @@ export const LogLevel = {
   ERROR: 'error',
 }
 
-const createCommandForLevel = level => (namespace, msg, ...args) => (
+const createCommandForLevel = level => commandWithStackFrame((namespace, msg, ...args) => (
   { type: TYPE, payload: { namespace, level, msg, args } }
-)
+))
 
 export const debug = createCommandForLevel(LogLevel.DEBUG)
 export const info = createCommandForLevel(LogLevel.INFO)
