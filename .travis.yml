@@ -19,3 +19,4 @@ deploy:
   on:
     tags: true
     repo: actano/borders-logging
+    node: '8'
