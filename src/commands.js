@@ -9,9 +9,15 @@ export const LogLevel = {
   ERROR: 'error',
 }
 
-const createCommandForLevel = level => commandWithStackFrame((namespace, msg, ...args) => (
-  { type: TYPE, payload: { namespace, level, msg, args } }
-))
+const createCommandForLevel = level => commandWithStackFrame((namespace, msg, ...args) => ({
+  type: TYPE,
+  payload: {
+    namespace,
+    level,
+    msg,
+    args,
+  },
+}))
 
 export const debug = createCommandForLevel(LogLevel.DEBUG)
 export const info = createCommandForLevel(LogLevel.INFO)

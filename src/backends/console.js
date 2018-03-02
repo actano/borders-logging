@@ -7,7 +7,9 @@ const logLevelToMethod = {
   [LogLevel.ERROR]: 'error',
 }
 
-const log = ({ namespace, msg, level, args }) => {
+const log = ({
+  namespace, msg, level, args,
+}) => {
   // eslint-disable-next-line no-console
   console[logLevelToMethod[level]](`${namespace}: ${msg}`, ...args)
 }
